@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo</title>
+    <style>
+        /* Centralizando o player no meio da tela */
+        html, body {
+            height: 100%; /* Faz a tela ocupar toda a altura */
+            margin: 0; /* Remove as margens padrão */
+            display: flex; /* Usa o modelo de flexbox */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            position: relative;
+            background-color: white; /* Cor de fundo clara */
+        }
+
+        /* Estilo das decorações - borda pixelada */
+        .decoration-top-left, .decoration-bottom-right {
+            position: absolute;
+            border: 5px solid #8c52ff; /* Borda roxa */
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+
+        /* Decoração no canto superior esquerdo */
+        .decoration-top-left {
+            width: 160px;
+            height: 160px;
+            top: 20px;
+            left: 20px;
+            box-shadow: 0 0 5px 5px #8c52ff inset; /* Efeito de borda pixelada */
+        }
+
+        /* Decoração no canto inferior direito */
+        .decoration-bottom-right {
+            width: 210px;
+            height: 210px;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0 0 5px 5px #8c52ff inset; /* Efeito de borda pixelada */
+        }
+
+        #player {
+            text-align: center; /* Centraliza o conteúdo dentro do div */
+            padding: 20px; /* Adiciona um pouco de espaço entre o player e a borda */
+            background-color: white; /* Fundo branco para destacar o vídeo */
+            border: 5px solid #8c52ff; /* Borda roxa ao redor do player */
+            border-radius: 10px; /* Borda arredondada */
+        }
+
+        video {
+            max-width: 100%; /* Limita a largura para 100% do contêiner */
+            max-height: 80vh; /* Limita a altura a 80% da altura da tela */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .decoration-top-left, .decoration-bottom-right {
+                width: 120px;
+                height: 120px;
+            }
+
+            video {
+                max-height: 60vh; /* Ajusta a altura do vídeo em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .decoration-top-left, .decoration-bottom-right {
+                width: 90px;
+                height: 90px;
+            }
+
+            video {
+                max-height: 50vh; /* Ajusta a altura do vídeo em telas muito pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorações com borda pixelada -->
+    <div class="decoration-top-left"></div>
+    <div class="decoration-bottom-right"></div>
+
+    <!-- Player de Vídeo -->
+    <div id="player">
+        <video autoplay controls height="480" width="640" src="SEU VÍDEO AQUI">
+        </video>
+    </div>
+</body>
+</html>
