@@ -12,9 +12,10 @@
 }
 
 body {
-    background-image: url(bakcground.gif);
+    background-image: url(../Fotos/fundoweb.gif);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     font-family: var(--fonte-principal);
     color: var(--cor-texto);
     background-color: var(--cor-secundaria);
