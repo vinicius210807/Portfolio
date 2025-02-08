@@ -70,7 +70,7 @@ body {
     color: var(--cor-principal);
     padding: 16px;
     background-color: black;
-    border: none;
+    border-radius: 50%;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -271,12 +271,20 @@ footer a:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .button-container {
+
+    .main-content {
         flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+    }
+
+    .button-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        grid: center;
+        gap: 1.0rem;
         padding: 0;
-        width: 100%;
+        justify-content: center;
     }
 
     .btn {
@@ -290,9 +298,47 @@ footer a:hover {
         margin-top: 1rem;
         padding: 0 1rem;
     }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: auto;
+        font-size: 2rem;
+        color: var(--cor-principal);
+        padding: 16px;
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        bottom: 1rem;
+    }
+
+    .prev {
+        left: 5rem;
+    }
+
+    .next {
+        right: 5rem;
+    }
+
 }
 
 @media (max-width: 480px) {
+
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.0rem;
+        padding: 0;
+
+    }
+
     header h1 {
         font-size: 1.8rem;
     }
@@ -311,4 +357,28 @@ footer a:hover {
         font-size: 1rem;
         padding: 0 1rem;
     }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: auto;
+        font-size: 2rem;
+        color: var(--cor-principal);
+        padding: 16px;
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        bottom: 1rem;
+    }
+
+    .prev {
+        left: 5rem;
+    }
+
+    .next {
+        right: 5rem;
+    }
+
+
 }
